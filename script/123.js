@@ -185,7 +185,7 @@ window.onload=function(){
                     }
                     break;
 
-                case 'arcsina':
+                case 'arcsin':
                     oResult.value=Math.asin(oResult.value*Math.PI/180);
                     if(sum==0 || lock){
                         oHiddenInput.value = oResult.value;
