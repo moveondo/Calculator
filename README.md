@@ -9,7 +9,7 @@
  
  遇到的坑：
  
- 1，解决安卓微信浏览器中location.reload 或者 location.href失效的问题
+ ### 1，解决安卓微信浏览器中location.reload 或者 location.href失效的问题
  
 在移动wap中，经常会使用window.location.href去跳转页面，这个方法在绝大多数浏览器中都不会 
 
@@ -17,11 +17,11 @@
 
 原来的代码：
 
-window.location.reload(location.href);
+> window.location.reload(location.href);
 
 初步判断可能是缓存的问题，首先想到的解决办法就是在要跳转的url后面加个时间戳，告知浏览器这是一个新的请求；
 
-window.location.reload(location.href+'?time='+((new Date()).getTime()));
+> window.location.reload(location.href+'?time='+((new Date()).getTime()));
 
 然而并没有什么卵用，看了下js文档：
 
@@ -44,4 +44,4 @@ href是location对象的一个属性，reload()则是location对象的方法
 
 解决办法就是，使用location.href代替reload(),而且在以后的使用中也强烈建议大家使用location.href来进行刷新或者跳转
 
-window.location.href = location.href+'?time='+((new Date()).getTime());
+> window.location.href = location.href+'?time='+((new Date()).getTime());
